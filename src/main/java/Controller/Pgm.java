@@ -14,37 +14,28 @@ public class Pgm {
         
         Manager.addCSVtoInventario(inv);
         System.out.print(inv);
-        printMenu1();
-        scelta = getSceltaMenu(); 
         
-        if(scelta >= 1 && scelta <= 3){
-            switch(scelta) {
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
+        do{
+            printMenu1();
+            scelta = getSceltaMenu(); 
+
+            if(scelta >= 1 && scelta <= 3){
+                switch(scelta) {
+                    case 1:
+                        spesa.aggiungiAlCarrello(inv);
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        System.out.println("Numero Articoli nel carrello: " + spesa.numeroArticoli());
+                        System.out.println("Costo Iva: " + spesa.getCosto());
+                        System.out.println("Costo No Iva: " + spesa.getCostoNoIva());
+                        break;
+                }
             }
-        }
-        else {
-            
-        }
-        
-        
-        
-        
-        
-        
-        spesa.aggiungi(100, inv);
-        spesa.aggiungi(100, inv);
-        spesa.aggiungi(104, inv);
-        spesa.aggiungi(100, inv);
-        spesa.aggiungi(101, inv);
-        spesa.aggiungi(107, inv);
-        
-        System.out.println("Numero Articoli nel carrello: " + spesa.numeroArticoli());
-        System.out.println("Costo Iva: " + spesa.getCosto());
-        System.out.println("Costo No Iva: " + spesa.getCostoNoIva());
+            else if(scelta != 0) {
+                
+            }
+        }while(scelta != 0);
     }
 }

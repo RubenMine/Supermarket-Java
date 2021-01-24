@@ -43,4 +43,19 @@ public class Spesa {
     public double getCosto() {
         return costoIva;
     }
+    
+    public void aggiungiAlCarrello(Inventario inv) {
+        int id;
+        int quantita;
+        do{
+            System.out.println();
+            System.out.println("ID non valido = exit");
+            id = Input.idScanner(inv);
+            if(id != 0){
+                quantita = Input.quantitaScanner();
+                for(int i = 1; i <= quantita; i++)
+                    this.aggiungi(id, inv);
+            }
+        }while(id != 0);       
+    }
 }
